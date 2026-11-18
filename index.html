@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lip’s Tone · Confeitaria Artesanal</title>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Nunito+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="hero">
+  <h1 class="wordmark" id="brandName"></h1>
+  <p>Panetones, cookies e brownies artesanais para as festas de fim de ano.</p>
+  <a class="cta" href="#cardapio">Ver cardápio</a>
+</header>
+<nav class="tabs" id="tabs" role="tablist" aria-label="Categorias"></nav>
+<main id="cardapio"><div class="grid" id="menu"></div></main>
+<section class="contact">
+  <h2>Fale com a gente</h2>
+  <div class="links"><a class="wa" id="waLink" target="_blank" rel="noopener">Chamar no WhatsApp</a><a class="ig" id="igLink" target="_blank" rel="noopener">Instagram</a></div>
+</section>
+<div class="bar" id="bar"><button class="btn" id="openCart"><span id="barQty"></span><span>Ver sacola</span><span id="barTotal"></span></button></div>
+<div class="sheet" id="sheet"><div class="panel" role="dialog" aria-label="Sua sacola">
+  <button class="close" id="closeCart" aria-label="Fechar">×</button>
+  <h2>Sua sacola</h2>
+  <div id="items"></div>
+  <label for="nome">Seu nome</label><input id="nome" placeholder="Como podemos te chamar?" autocomplete="name">
+  <label for="data">Data do pedido</label><select id="data"></select>
+  <label for="obs">Observações (opcional)</label><textarea id="obs" rows="2"></textarea>
+  <p class="err" id="err" role="alert"></p><div class="total"><span>Total</span><span id="total"></span></div>
+  <button class="btn" id="send">Enviar pedido pelo WhatsApp</button>
+</div></div>
+
+<footer class="foot">© <span id="yr"></span> <span class="brandTxt"></span> · <a href="#admin">Área administrativa</a></footer>
+<!-- ÁREA ADMINISTRATIVA: aparece quando a URL termina em #admin (ver rotear() no script) -->
+<div id="admin"></div>
+<!-- Ordem importa: config → services → app → admin → main -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
+<script src="js/services.js"></script>
+<script src="js/app.js"></script>
+<script src="js/admin.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
