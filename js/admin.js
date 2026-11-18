@@ -11,7 +11,7 @@ async function renderAdmin(){
   // >>> CONTROLE DE ACESSO: sem login, só mostra a tela de entrada <<<
   if(!AuthService.estaLogado()){
     box.innerHTML = `<div class="adm-wrap"><h2>Área administrativa</h2>${AuthService.pedeEmail ? `<label for="email">E-mail</label><input id="email" type="email" autocomplete="username">` : ""}<label for="pin">${AuthService.pedeEmail ? "Senha" : "PIN de acesso"}</label>
-      <input id="pin" type="password" inputmode="numeric" autocomplete="off"><p class="err" id="pinErr"></p>
+      <input id="pin" type="password" inputmode="text" autocomplete="current-password"><p class="err" id="pinErr"></p>
       <button class="btn" data-adm="login" style="margin-top:12px">Entrar</button><p><a href="#">← Voltar ao site</a></p></div>`;
     return;
   }
